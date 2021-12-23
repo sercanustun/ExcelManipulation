@@ -1,5 +1,8 @@
 package com.bilgeadam.boost.java.course01.lesson078;
 
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.*;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,20 +12,6 @@ import java.util.Date;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-
-import org.apache.poi.ss.usermodel.BorderStyle;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.CreationHelper;
-import org.apache.poi.ss.usermodel.FillPatternType;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.HorizontalAlignment;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.xssf.usermodel.XSSFColor;
-import org.apache.poi.xssf.usermodel.XSSFFont;
-import org.apache.poi.xssf.usermodel.XSSFRow;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelGenerator {
 	private static final String EXCEL_FILE = "C:\\Users\\sercu\\SERCAN\\DERSICI\\My Excel.xlsx";
@@ -35,7 +24,7 @@ public class ExcelGenerator {
 	private static void generate() throws IOException {
 		
 		Map<String, ExcelRow> data = new TreeMap<>();
-		data.put("1", new ExcelRow(1, "Bab�r", "2021-12-19", 12.3f));
+		data.put("1", new ExcelRow(1, "Babur", "2021-12-19", 12.3f));
 		data.put("2", new ExcelRow(2, "Cafer", "2020-12-19", 178.8f));
 		data.put("3", new ExcelRow(3, "Narin", "2019-12-19", 23f));
 		data.put("4", new ExcelRow(4, "Tezer", "2018-12-19", 48.33465f));
@@ -50,7 +39,7 @@ public class ExcelGenerator {
 		
 		XSSFRow row;
 		int rowCnt = 0;
-		String[] header = { "Id", "�sim", "Kay�t Tarihi", "Boy" };
+		String[] header = { "Id", "Isim", "Kayit Tarihi", "Boy" };
 		CellStyle headerStyle = wb.createCellStyle();
 		headerStyle.setBorderBottom(BorderStyle.THICK);
 		headerStyle.setBorderTop(BorderStyle.THICK);
